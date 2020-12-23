@@ -3,10 +3,20 @@ const users = require('./users.json')
 const fs = require('fs')
 const faker = require('faker')
 
+
+// const users = [
+//   {  firstName: 'TAY',  lastName: 'Swift', email: 'Tswift@gmail.com' },
+//   {  firstName: 'Logi',  lastName: 'Yu', email: "yu.logan@gmail.com"},
+//   {  firstName: 'Jessi', lastName: 'Jones',email:"jess.jonesr@gmail.com"},
+// ]
+
 const seed = async () => {
   try {
     console.log('syncing DB...')
     await db.sync({ force: true })
+    // await Promise.all(users.map(user => {
+    //   return User.create(user);
+    // }));
     console.log('db synced!')
 
     console.log('seeding DB...')
